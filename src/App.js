@@ -1,24 +1,31 @@
-function Square({squareNumber}) {
-  return <button className="square">{squareNumber}</button>;
+import { useState } from "react";
+
+function Square() {
+  const [squareNumber, setSquareNumber] = useState(null);
+
+  function handleClick(){
+    setSquareNumber('X')
+  }
+  return <button className="square" onClick={handleClick}>{squareNumber}</button>;
 }
 
 export default function Board(){
   return (
     <>
       <div className="board-row">
-        <Square squareNumber={1}/>
-        <Square squareNumber={2}/>
-        <Square squareNumber={3}/>
+        <Square/>
+        <Square/>
+        <Square/>
       </div>
       <div className="board-row">
-        <Square squareNumber={4}/>
-        <Square squareNumber={5}/>
-        <Square squareNumber={6}/>
+        <Square/>
+        <Square/>
+        <Square/>
       </div>
       <div className="board-row">
-        <Square squareNumber={7}/>
-        <Square squareNumber={8}/>
-        <Square squareNumber={9}/>
+        <Square/>
+        <Square/>
+        <Square/>
       </div>
     </>
   )
